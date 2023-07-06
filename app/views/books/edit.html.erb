@@ -1,5 +1,16 @@
 <h1>EditingBook</h1>
 
+<div class="error">
+  <% if @book.errors.any? %>
+    <p class="error-message"><%= @book.errors.count %>errors prohibited this book from being saved</p>
+    <ul class="error-contents">
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
 <%= form_with model: @book do |book| %>
 
 <div class="edit-input">  
@@ -13,7 +24,7 @@
 </div>
 
 <div class="edit-input">
-  <%= book.submit 'UpdateBook' %>
+  <%= book.submit 'Update Book' %>
 </div>
 
 <% end %>
