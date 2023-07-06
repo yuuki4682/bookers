@@ -1,13 +1,18 @@
 <div class="flash-message"><%= flash[:notice] %></div>
 
-<p>title</p>
-<%= @book.title %>
-
-<p>body</p>
-<%= @book.body %>
-
 <div>
+  <p class="show-title">
+    <strong>title: </strong><%= @book.title %>
+  </p>
+
+  <p class="show-body">
+    <strong>body: </strong><%= @book.body %>
+  </p>
+</div>
+
+<div class="link">
   <span><%= link_to 'edit', edit_book_path(@book.id) %></span>
+  <span> | </span>
   <span><%= link_to 'back', '/books' %></span>
   
 </div>

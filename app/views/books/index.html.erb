@@ -1,8 +1,10 @@
+
+
 <div class="flash-message"><%= flash[:notice] %></div>
 
-<h1>books</h1>
+
 <div class="books-index">
-  
+  <h1>books</h1>
   <table class="book-table">
     <tr>
       <th>TITLE</th>
@@ -23,32 +25,35 @@
     </table>
 </div>
 
-<h2>New Book</h2>
-
-<div class="error-message">
-  <% if @book.errors.any? %>
-    <p><%= @book.errors.count %>errors prohibited this book from being saved</p>
-    <ul>
-      <% @book.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  <% end %>
-</div>
 
 <div class="new-book">
+  
+  <h2>New Book</h2>
+
+  <div class="error">
+    <% if @book.errors.any? %>
+      <p class="error-message"><%= @book.errors.count %>errors prohibited this book from being saved</p>
+      <ul class="error-contents">
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
   <%= form_with model: @book, url: '/books', method: :post do |book| %>
   
-   <div>
+   <div class="book-input">
       <p>title</p>
       <%= book.text_field :title %>
     </div> 
   
-    <div>
+    <div class="book-input">
       <p>body</p>
       <%= book.text_area :body %>
     </div>
-  
-    <%= book.submit 'create book'%>
+    <div class="submit">
+      <%= book.submit 'create book'%>
+    </div>
   <% end %>
   </div>

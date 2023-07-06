@@ -20,3 +20,66 @@ a, a:visited{
 a:hover{
   color: blue;
 }
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  margin: 33px ;
+}
+
+.home-text{
+  margin: 30px;
+  line-height: 70px
+}
+
+.flash-message{
+  color: green;
+}
+
+th, td{
+  padding: 5px 5px 0 10px;
+}
+
+.books-index{
+  padding-top: 10px;
+}
+
+.new-book{
+  padding-top:20px;
+}
+
+.book-input{
+  padding: 15px 0 0 20px ;
+}
+
+.submit{
+  padding: 0 20px;
+}
+
+.error-message{
+  width: 60%;
+  background-color: red;
+  color: white;
+}
+.error-contents{
+  width: 60%;
+  padding: 50px;
+  background-color: #f0f0f0;
+  border: solid 3px red;
+}
+
+.show-title, .show-body{
+  margin: 30px;
+}
+
+.edit-input{
+  margin-top: 10px;
+}
+
+.link{
+  margin-top: 20px;
+}
